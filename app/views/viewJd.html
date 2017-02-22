@@ -1,7 +1,7 @@
 ﻿<div class="row" ng-controller="viewJdController">
     <div style="margin:10px 10px 10px">
         <div class="well text-primary">
-            <span style="font-size:x-large">{{client.name}}</span> <a class="btn btn-primary pull-right"><i class="fa fa-pencil"></i> Edit</a><br />
+            <span style="font-size:x-large">{{client.name}}</span> <a class="btn btn-primary pull-right" ui-sref="dashboard.editJd({jobId:jdId})"><i class="fa fa-pencil"></i> Edit</a><br />
             <span style="font-size:x-large">{{job.position}} - </span><span style="color:cornflowerblue;font-size:larger">{{job.jobLocation}}</span>
             <br />
             <span style="font-size:larger;margin-top:10px"><i class="fa fa-rupee"></i> {{job.minSalary}} - {{job.maxSalary}} Lakhs</span><br />

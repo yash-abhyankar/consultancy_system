@@ -110,3 +110,15 @@ td {
     padding: 3px 10px;
     margin-left: 10px;
 }
+
+/* for candiate.htm page */
+.icon {
+    font-size:x-large;
+    margin-top: 10px;
+    color: cornflowerblue;
+}
+
+.black {
+    color: black;
+    font-size: larger;
+}

@@ -1,0 +1,62 @@
+﻿<div ng-controller="allCandidatesController">
+
+    
+    <div style="padding-top:20px" class="panel-group">
+        <div class="panel panel-default" style="margin-bottom:10px" ng-repeat="candidate in allCandidates">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="fa fa-child"></span>  <a ui-sref="dashboard.candidate({candidateId:candidate.id})"> {{candidate.name}}</a>
+                    </div>
+                    <div class="col-md-3">
+                        dropdown
+                    </div>
+                    <div class="col-md-1">
+                        {{candidate.time}}
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <span class="fa fa-bookmark"></span> {{candidate.designation}}
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa fa-briefcase"></span> {{candidate.currentCompany}}
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa fa-graduation-cap"> </span>   {{candidate.qualification}}
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-1">
+                        score
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#" class="btn pull-right text-success fa fa-lg fa-download"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <span class="fa fa-map-marker"></span>  {{candidate.location}}
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa fa-line-chart"></span>   {{candidate.experience}}
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa fa-rupee"></span>    {{candidate.currentCTC}}
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-1">
+
+                    </div>
+                    <div class="col-md-1">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

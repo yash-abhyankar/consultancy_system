@@ -18,7 +18,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-md-8">
-                        <span class="fa fa-child"></span>  <a ui-sref ="dashboard.candidate({candidateId:candidate.id})"> {{candidate.name}}</a>
+                        <span class="fa fa-child"></span>  <a ui-sref ="dashboard.candidate({candidateId:candidate.id,jobId:jobId})"> {{candidate.name}}</a>
                     </div>
                     <div class="col-md-3">
                         dropdown
@@ -45,7 +45,7 @@
                         score
                     </div>
                     <div class="col-md-1">
-                        <a href="#" class="btn pull-right text-success fa fa-lg fa-download"></a>
+                        <a ui-sref="dashboard.downloadCV({candidateId:candidate.id})" class="btn pull-right text-success fa fa-lg fa-download"></a>
                     </div>
                 </div>
                 <div class="row">

@@ -190,17 +190,49 @@ angular
                 }
             }
         })
+          .state('dashboard.downloadCV', {
+              templateUrl: 'views/downloadCV.html',
+              url: '/downloadCV/:candidateId',
+              controller: 'downloadCVController',
+              resolve: {
+                  loadMyFile: function ($ocLazyLoad) {
+                      return $ocLazyLoad.load({
+                          name: 'sbAdminApp',
+                          files: ['scripts/controllers/downloadCVController.js']
+                      })
+
+                  }
+              }
+          })
+
+//below is to view all jobs in candidate dropdown
+
+           .state('dashboard.allCandidates', {
+               templateUrl: 'views/allCandidates.html',
+               url: '/allCandidates',
+               controller: 'allCandidatesController',
+               resolve: {
+                   loadMyFile: function ($ocLazyLoad) {
+                       return $ocLazyLoad.load({
+                           name: 'sbAdminApp',
+                           files: ['scripts/controllers/allCandidatesController.js']
+                       })
+
+                   }
+               }
+           })
 
 
         .state('dashboard.candidate', {
             templateUrl: 'views/candidate.html',
-            url: '/candidate/:candidateId',
+            url: '/candidate/:jobId/:candidateId',
             controller: 'candidateController',
             resolve: {
                 loadMyFile: function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
                         name: 'sbAdminApp',
-                        files: ['scripts/controllers/candidateController.js']
+                        files: ['scripts/controllers/candidateController.js',
+                        'scripts/directives/enterEvent/enterEvent.js']
                     })
 
                 }
@@ -222,6 +254,26 @@ angular
                }
            })
 
+           .state('dashboard.editJd', {
+               templateUrl: 'views/editJd.html',
+               url: '/editJd/:jobId',
+               controller: 'editJdController',
+               resolve: {
+                   loadMyFile: function ($ocLazyLoad) {
+                       return $ocLazyLoad.load({
+                           name: 'sbAdminApp',
+                           files: ['bower_components/summernote/dist/summernote.min.js',
+                           'bower_components/summernote/dist/summernote.css',
+                               'scripts/controllers/editJdController.js',
+                               'scripts/directives/enterEvent/enterEvent.js'
+                           ]
+                         
+                       })
+
+                   }
+               }
+           })
+
 
         .state('dashboard.newjd', {        //for posting/uploading new job description
             templateUrl: 'views/newjd.html',
@@ -233,8 +285,10 @@ angular
                         name: 'sbAdminApp',
                         files: ['scripts/controllers/jdController.js',
                         'bower_components/summernote/dist/summernote.min.js',
-                        'bower_components/summernote/dist/summernote.css'
-                        
+                        'bower_components/summernote/dist/summernote.css',
+                        'scripts/directives/enterEvent/enterEvent.js'
+                     
+
                         ]
                     })
 

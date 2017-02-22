@@ -10,12 +10,15 @@
             </li>
             <li ng-class="{active: collapseVar==1}">
                 {{dropDown}}
-                <a ui-sref="dashboard.positions" ng-click="check(1)">
+                <a href="" ng-click="check(1)">
                     <i class="fa fa-users"></i> Candidates<span class="fa arrow"></span>
                 </a>
                 <ul class="nav nav-second-level" collapse="collapseVar!=1">
                     <li ng-repeat="job in jobs" ui-sref-active="active">
-                        <a ui-sref="dashboard.job({jobId:job.id})">{{job.position}} &nbsp;<i class="fa fa-circle" style="font-size:x-small" ng-class="job.status=='Open'?'text-success':'text-danger'" ng-attr-tooltip="{{job.status=='Open' && 'Open' || 'Close' }}"></i></a>
+                        <a ui-sref="dashboard.job({jobId:job.id})"><i>{{job.position}}</i> &nbsp;<i class="fa fa-circle pull-right" style="font-size:x-small" ng-attr-style="{{job.status=='Open' && 'color:lawngreen' || 'color:red'}}" ng-attr-tooltip="{{job.status=='Open' && 'Open' || 'Close' }}"></i></a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.allCandidates"><i>All Jobs</i></a>
                     </li>
 
                 </ul>
