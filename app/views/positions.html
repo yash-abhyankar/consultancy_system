@@ -12,18 +12,18 @@
             </div>
             <div class="col-lg-2">
 
-               <a ui-sref="dashboard.newjd" tooltip="Create new Job positions" tooltip-placement="left" class="btn btn-primary"> <span class="fa fa-upload"></span>&nbsp; Upload JD</a>
+                <a ui-sref="dashboard.newjd" tooltip="Create new Job positions" tooltip-placement="left" class="btn btn-primary"> <span class="fa fa-upload"></span>&nbsp; Upload JD</a>
             </div>
 
 
             <!-- /.col-lg-12 -->
         </div>
 
-        
+
     </div>
     <hr>
 
-    <table  class="table table-bordered table-hover table-responsive" cellpadding="2">
+    <table class="table table-bordered table-hover table-responsive" cellpadding="2">
 
         <thead>
             <tr>
@@ -36,7 +36,11 @@
         <tr ng-repeat="job in jd">
 
             <td><a ui-sref="dashboard.job({jobId:job.id})">{{job.position}}</a> </td>
-            <td ng-class="job.status=='Open'?'text-success':'text-danger'">{{job.status}}</td>
+            <td>
+               
+
+                <toggle ng-model="job.status" on="Open" off="Closed" ></toggle>
+            </td>
             <td>{{job.cv}}</td>
 
 
@@ -46,3 +50,4 @@
     </table>
 
 </div>
+

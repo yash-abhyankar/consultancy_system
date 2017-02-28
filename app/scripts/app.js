@@ -13,6 +13,7 @@ angular
     'ui.router',
     'ui.bootstrap',
     'angular-loading-bar',
+    'ui.toggle'
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
@@ -93,66 +94,17 @@ angular
                 }
             }
         })
-        .state('dashboard.form', {
-            templateUrl: 'views/form.html',
-            url: '/form'
-        })
-        .state('dashboard.blank', {
-            templateUrl: 'views/pages/blank.html',
-            url: '/blank'
-        })
+
         .state('login', {
             templateUrl: 'views/pages/login.html',
             url: '/login'
         })
-        .state('dashboard.chart', {
-            templateUrl: 'views/chart.html',
-            url: '/chart',
-            controller: 'ChartCtrl',
-            resolve: {
-                loadMyFile: function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'chart.js',
-                        files: [
-                          'bower_components/angular-chart.js/dist/angular-chart.min.js',
-                          'bower_components/angular-chart.js/dist/angular-chart.css'
-                        ]
-                    }),
-                    $ocLazyLoad.load({
-                        name: 'sbAdminApp',
-                        files: ['scripts/controllers/chartContoller.js']
-                    })
-                }
-            }
-        })
-        .state('dashboard.table', {
-            templateUrl: 'views/table.html',
-            url: '/table'
-        })
-        .state('dashboard.panels-wells', {
-            templateUrl: 'views/ui-elements/panels-wells.html',
-            url: '/panels-wells'
-        })
-        .state('dashboard.buttons', {
-            templateUrl: 'views/ui-elements/buttons.html',
-            url: '/buttons'
-        })
+
         .state('dashboard.notifications', {
             templateUrl: 'views/ui-elements/notifications.html',
             url: '/notifications'
         })
-        .state('dashboard.typography', {
-            templateUrl: 'views/ui-elements/typography.html',
-            url: '/typography'
-        })
-        .state('dashboard.icons', {
-            templateUrl: 'views/ui-elements/icons.html',
-            url: '/icons'
-        })
-        .state('dashboard.grid', {
-            templateUrl: 'views/ui-elements/grid.html',
-            url: '/grid'
-        })
+
 
         .state('dashboard.positions', {
             templateUrl: 'views/positions.html',
@@ -267,7 +219,7 @@ angular
                                'scripts/controllers/editJdController.js',
                                'scripts/directives/enterEvent/enterEvent.js'
                            ]
-                         
+
                        })
 
                    }
@@ -275,6 +227,53 @@ angular
            })
 
 
+            .state('dashboard.calender', {
+                templateUrl: 'views/calender.html',
+                url: '/calender',
+                controller: 'calenderController',
+                resolve: {
+                    loadMyFile: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: ['scripts/controllers/calenderController.js']
+                        })
+
+                    }
+                }
+            })
+
+
+
+            .state('dashboard.statistics', {
+                templateUrl: 'views/statistics.html',
+                url: '/statistics',
+                controller: 'statisticsController',
+                resolve: {
+                    loadMyFile: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: ['scripts/controllers/statisticsController.js']
+                        })
+
+                    }
+                }
+            })
+
+
+        .state('dashboard.newCandidates', {
+            templateUrl: 'views/newCandidates.html',
+            url: '/newCandidates',
+            controller: 'newCandidatesController',
+            resolve: {
+                loadMyFile: function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: 'sbAdminApp',
+                        files: ['scripts/controllers/newCandidatesController.js']
+                    })
+
+                }
+            }
+        })
         .state('dashboard.newjd', {        //for posting/uploading new job description
             templateUrl: 'views/newjd.html',
             url: '/newjd',
@@ -287,7 +286,7 @@ angular
                         'bower_components/summernote/dist/summernote.min.js',
                         'bower_components/summernote/dist/summernote.css',
                         'scripts/directives/enterEvent/enterEvent.js'
-                     
+
 
                         ]
                     })

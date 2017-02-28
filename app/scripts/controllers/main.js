@@ -7,5 +7,9 @@
  * Controller of the sbAdminApp
  */
 angular.module('sbAdminApp')
-  .controller('MainCtrl', function($scope,$position) {
+  .controller('MainCtrl', function ($scope, $position) {
+
+
+      $scope.newCandidates = 18;
+      $scope.upcomingInterviews = 3;
   });

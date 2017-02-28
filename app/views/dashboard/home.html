@@ -7,14 +7,12 @@
     </div>
     <!-- /.row -->
     <div class="row">
-        
-        <stats number="6" comments="New comments!" colour="primary" type="comments"></stats>
-        <stats number="12" comments="New tasks!" colour="primary" type="user"></stats>
-        <stats number="18" comments="New orders!" colour="yellow" type="shopping-cart"></stats>
-        <stats number="24" comments="Support tickets!" colour="red" type="support"></stats>
-
+        <stats number="&nbsp" comments="Upload JD" colour="primary" type="upload" goto="dashboard.newjd" details="Upload a new JD"></stats>
+        <stats number={{newCandidates}} comments="New Candidates!" colour="green" type="user" goto="dashboard.newCandidates" details="View Details"></stats>
+        <stats number="{{upcomingInterviews}}" comments="Upcoming Interviews" colour="yellow" type="user-secret" goto="dashboard.calender" details="View Details"></stats>
+        <stats number="&nbsp" comments="Statistics" colour="red" type="line-chart" goto="dashboard.statistics" details="View Details" ></stats>
     </div>
-    
+
     <!-- /.panel -->
     <div class="row">
         <div class="col-lg-8">
@@ -35,13 +33,12 @@
                     <i class="fa fa-bell fa-fw"></i> Notifications Panel
                 </div>
                 <!-- /.panel-heading -->
-                <notifications></notifications> 
+                <notifications></notifications>
                 <!-- /.panel-body -->
             </div>
             <!-- /.panel -->
-
             <chat></chat>
-             <!-- /.panel .chat-panel -->
+            <!-- /.panel .chat-panel -->
         </div>
         <!-- /.col-lg-4 -->
     </div>
